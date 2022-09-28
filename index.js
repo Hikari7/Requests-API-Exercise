@@ -12,6 +12,7 @@ const request = new XMLHttpRequest()
  * PUT/PATCH --> to update an existing data
  * DELETE --> to delete a data
  */
+
 const btn = document.getElementById("btn")
 const animalContainer = document.getElementById("animal-info")
 

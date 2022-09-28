@@ -2,7 +2,7 @@ const listElement = document.querySelector(".posts");
 const postTemplate = document.querySelector("#single-post");
 const form = document.querySelector("#new-post form");
 const fetchButton = document.querySelector("#available-posts button");
-const postList = document.querySelector("ul");
+const postList = document.querySelector(".posts");
 
 function sendHttpRequest(method, url, data) {
   // with XHR
@@ -59,6 +59,20 @@ async function fetchPosts() {
         postElClone.querySelector("li").id = post.id;
         listElement.appendChild(postElClone);
       }
+
+      const li = document.querySelector(".post-item");
+
+      const deleteBtns = document.querySelectorAll(".delete-btn");
+      deleteBtns.forEach((del) => {
+        del.addEventListener("click", (e) => {
+          const deleteItem = e.target.parentNode;
+          deleteItem.parentNode.removeChild(deleteItem);
+          // 多分Nodeの指定をしなきゃいけないから何だと思う
+          // console.log(e.target.parentNode);
+        });
+      });
+
+      console.log(data);
     })
     .catch((err) => {
       console.error("Error Message => ", err);
