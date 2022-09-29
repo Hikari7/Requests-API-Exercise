@@ -81,3 +81,59 @@ async function fetchPosts() {
 
 //READ
 fetchButton.addEventListener("click", fetchPosts);
+
+
+//↓授業の。データ扱い //
+// async function createPost(title, content) {
+//   try {
+//     const post = {
+//       title: title,
+//       body: content,
+//       userId: Math.random()
+//     };
+
+//     const result = await sendHttpRequest(
+//       "POST",
+//       "https://jsonplaceholder.typicode.com/posts",
+//       post
+//     );
+//     console.log(result);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// async function deletePost(event){
+//     if(event.target.tagName === "BUTTON"){
+
+//         event.target.style.backgroundColor = "gray"
+//         event.target.style.borderColor = "gray"
+//         event.target.textContent = "Loading..."
+//         event.target.disabled = true
+
+//         const postToDelete = event.target.closest("li")
+//         console.log(postToDelete);
+
+//         const result = await sendHttpRequest("DELETE", "https://jsonplaceholder.typicode.com/posts/" + postToDelete.id)
+
+//         if(result === "Delete successfully"){
+//             this.removeChild(postToDelete)
+//         }
+//     }
+// }
+
+// //READ
+// fetchButton.addEventListener("click", fetchPosts);
+
+// //CREATE
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const enteredTitle = event.currentTarget.querySelector("#title").value;
+//   const enteredContent = event.currentTarget.querySelector("#content").value;
+
+//   createPost(enteredTitle, enteredContent);
+// });
+
+// //DELETE
+// postList.addEventListener("click", deletePost);
+// //
